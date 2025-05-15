@@ -1,0 +1,280 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "DS",
+          "properties": {
+            "label": "return_type",
+          },
+          "version": "1.0",
+          "informationUri": "github.com"
+        }
+      },
+      "artifacts": [
+        {
+          "contents": {
+            "binary": "SGVsbG8gV29ybGQhCg=="
+          },
+          "hashes": {
+            "sha-256": "03ba204e50d126e4674c005e04d82e84c21366780af1f43bd54a37816b6ab340"
+          },
+          "length": 13,
+          "location": {
+            "uri": "machine_1:/home/user/workspace/sarif/analyzed_file"
+          }
+        }
+      ],
+      "invocations": [
+        {
+          "machine": "machine_1",
+          "executionSuccessful": true,
+          "commandLine": "main.py --stuff",
+          "startTimeUtc": "2023-01-20T20:34:53.603Z",
+          "workingDirectory": {
+            "uri": "/home/user/workspace/sarif"
+          }
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": ""
+          },
+          "kind": "informational",
+          "level": "none",
+          "locations": [
+            {
+              "physicalLocation": {
+                "address": {
+                  "absoluteAddress": 0
+                },
+                "artifactLocation": {
+                  "index": 0
+                }
+              }
+            }
+          ],
+          "properties": {
+            "confidence": [
+              0.8,
+              0.2
+            ]
+          },
+          "taxa": [
+            {
+              "index": 0,
+              "toolComponent": {
+                "name": "types"
+              }
+            }
+          ],
+          "ruleId": "return_type"
+        },
+        {
+          "message": {
+            "text": ""
+          },
+          "kind": "informational",
+          "level": "none",
+          "locations": [
+            {
+              "physicalLocation": {
+                "address": {
+                  "absoluteAddress": 1
+                },
+                "artifactLocation": {
+                  "index": 0
+                }
+              }
+            }
+          ],
+          "properties": {
+            "confidence": [
+              0.7,
+              0.3
+            ]
+          },
+          "taxa": [
+            {
+              "index": 1,
+              "toolComponent": {
+                "name": "types"
+              }
+            }
+          ],
+          "ruleId": "return_type"
+        },
+        {
+          "message": {
+            "text": ""
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "name": "__gmon_start__",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "ruleId": "Library function description",
+          "properties": {
+            "listing/comment": "The function call_gmon_start initializes the gmon profiling system. This system is enabled when binaries are compiled with the -pg flag, and creates output for use with gprof(1). In the case of the scenario binary call_gmon_start is situated directly proceeding that _start function. The call_gmon_start function finds the last entry in the Global Offset Table (also known as __gmon_start__) and, if not NULL, will pass control to the specified address. The __gmon_start__ element points to the gmon initialization function, which starts the recording of profiling information and registers a cleanup function with atexit(). In our case however gmon is not in use, and as such __gmon_start__ is NULL.",
+            "listing/highlight": "#FF0000",
+            "listing/bookmark": "Bookmark Comment"
+          }
+        },
+        {
+          "message": {
+            "text": "When you click it should do a selection and a graph"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "name": "__entry__",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "ruleId": "Example flow and graph",
+          "graphs": [
+            {
+              "nodes": [
+                {
+                  "id": "n1",
+                  "label": {
+                    "text": "Node 1"
+                  }
+                },
+                {
+                  "id": "n2",
+                  "label": {
+                    "text": "Node 2"
+                  }
+                }
+              ],
+              "edges": [
+                {
+                  "sourceNodeId": "n1",
+                  "targetNodeId": "n2"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "message": {
+                "text": "a code flow"
+              },
+              "threadFlows": [
+                {
+                  "id": "thread-123",
+                  "message": {
+                    "text": "a thread flow"
+                  },
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "address": {
+                            "absoluteAddress": 1048576
+                          }
+                        }
+                      },
+                      "state": {
+                        "x": {
+                          "text": "42"
+                        },
+                        "y": {
+                          "text": "54"
+                        },
+                        "x + y": {
+                          "text": "96"
+                        }
+                      },
+                      "nestingLevel": 0,
+                      "executionOrder": 2
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "address": {
+                            "absoluteAddress": 1048578
+                          }
+                        }
+                      },
+                      "state": {
+                        "x": {
+                          "text": "43"
+                        },
+                        "y": {
+                          "text": "55"
+                        },
+                        "x + y": {
+                          "text": "97"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "graphs": [
+        {
+          "nodes": [
+            {
+              "id": "n1",
+              "label": {
+                "text": "Node 1"
+              }
+            },
+            {
+              "id": "n2",
+              "label": {
+                "text": "Node 2"
+              }
+            }
+          ],
+          "edges": [
+            {
+              "sourceNodeId": "n1",
+              "targetNodeId": "n2"
+            }
+          ]
+        }
+      ],
+      "taxonomies": [
+        {
+          "name": "types",
+          "taxa": [
+            {
+              "id": "int"
+            },
+            {
+              "id": "uint"
+            }
+          ]
+        }
+      ],
+      "versionControlProvenance": [
+        {
+          "branch": "user-sandbox",
+          "repositoryUri": "https://gitlab/playground.git",
+          "mappedTo": {
+            "uriBaseId": "/nfs-home/user/workspace/playground"
+          },
+          "revisionId": "5baaa23e161d3219fb0866dbe654fed7df56ede4"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json"
+}

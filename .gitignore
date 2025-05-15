@@ -1,0 +1,14 @@
+*.coverage
+__pycache__/
+*.py[cod]
+*$.py.class
+
+*.egg-info/
+*.swp
+*.pth
+
+*.class
+client/**/bin
+.project
+.classpath
+.settings/

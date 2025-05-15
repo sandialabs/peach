@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "peach"
+version = "1.0.0"
+description = "Data Science server for use with Ghidra"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers=[
+    "Programming Language :: Python :: 3",
+    "Operating System :: POSIX",
+]
+dependencies = [
+    "pandas",
+    "jschema_to_python >= 1.2.3",
+    "sarif_om >= 1.0.4",
+]
+
+[project.urls]
+homepage = "https://github.com/sandialabs/peach"
+source = "https://github.com/sandialabs/peach"
+issues = "https://github.com/sandialabs/peach/issues"
+
+[project.optional-dependencies]
+GRAPH = [
+    "matplotlib",
+    "networkx",
+    "scipy",
+]
+
+[project.scripts]
+peach = "peach.server:main"
+peach_log = "peach.sarif_tools.cli:run_log_command"
+peach_append = "peach.sarif_tools.cli:run_append_info"
+peach_read = "peach.sarif_tools.cli:run_read_log"
+peach_convert = "peach.sarif_tools.cli:run_convert"
+
+[tool.setuptools.packages.find]
+where = ["src"]
